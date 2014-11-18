@@ -1,0 +1,55 @@
+ #################################### 
+ #  TUT DEV ANDROID EN ESPAÑOL      #  
+ #        By Michael Vargas         #  
+ #                                  #  
+ #        Android 2014-2015         #  
+ # [ 1.0 Tutorial Trafico de datos ]# 
+ #                                  #
+ # facebook.com/groups/devAndroidES/# 
+ ####################################
+{x}Sources: https://github.com/Msvargas97
+ 
+ 0. Descompilar el SystemUi.apk y/o preparar herramientas de descompilado de apks ( Apkmultitool,Advanced..)
+ 
+ 1.Escoger con que version de Apktool estas trabajando para descargar
+ los smalis correspondientes.
+ ejemplo: 
+ si descompilastes el SystemUi.apk con apktool 1.52 o si lo hicistes con 2.0+, que serian las
+ versiones de apktool más usadas a continuacion escoges con que archivos trabajarias.
+ 
+ *Data_traffic_MsVargas_Apktool_1.52
+ *Data_traffic_MsVargas_Apktool_2.0+
+ 
+ 2. Extraer los archivos escogidos en el paso anterior en la ruta:
+--->  smali\com\android\systemui\statusbar\policy
+
+3.Ir a la carpeta : ---> res/layout y buscar el xml --> status_bar.
+Una vez encontrado pondremos el sisguiente codigo:
+
+code:
+     <com.android.systemui.statusbar.policy.Traffic android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:textSize="11.0dip" android:textStyle="bold" android:textColor="#009688" android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+A continuacion les mostre un ejemplo de como quedaria el status_bar.xml por si no saben donde ubicarlo...
+
+ <LinearLayout android:orientation="horizontal" android:id="@id/notification_icon_area" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:layoutDirection="ltr">
+            <com.android.systemui.statusbar.StatusBarIconView android:id="@id/moreIcon" android:visibility="gone" android:layout_width="@dimen/status_bar_icon_size" android:layout_height="fill_parent" android:src="@drawable/stat_notify_more" />
+            <com.android.systemui.statusbar.phone.IconMerger android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/notificationIcons" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr" android:layout_alignParentStart="true" />
+        </LinearLayout>
+        <com.android.systemui.statusbar.policy.Traffic android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:textSize="10.0dip" android:textStyle="bold" android:textColor= <LinearLayout android:orientation="horizontal" android:id="@id/notification_icon_area" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:layoutDirection="ltr">
+            <com.android.systemui.statusbar.StatusBarIconView android:id="@id/moreIcon" android:visibility="gone" android:layout_width="@dimen/status_bar_icon_size" android:layout_height="fill_parent" android:src="@drawable/stat_notify_more" />
+            <com.android.systemui.statusbar.phone.IconMerger android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/notificationIcons" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr" android:layout_alignParentStart="true" />
+        </LinearLayout>
+        <com.android.systemui.statusbar.policy.Traffic android:textAppearance="@style/TextAppearance.StatusBar.Clock" android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" /> android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+		
+
+5. Cambiar el color y/o el tamaño:
+ android:textColor="#ffffffff"	
+  android:textSize="10.0dip" 
+  
+6. Recompilar el SystemUi.apk
+7.Instalar el SystemUi.apk ya sea usando algun zip, puedes descargar el zip base que esta en GitHub lo descargas y simplementes pones la carpeta del SystemUi ( app ó priv-app) en System, lo comprimes el archivo con 7Zip y lo instalas en el recovery
+
+
+___________________________________________
+Noviembre 18 2014
+11:21 AM
+Autor:Michael Vargas
